@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 
-from fswd.views import IndexView
+from fsdw.views import IndexView
 
 urlpatterns = patterns(
     '',

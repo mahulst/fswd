@@ -49,9 +49,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'fswd.urls'
+ROOT_URLCONF = 'fsdw.urls'
 
-WSGI_APPLICATION = 'fswd.wsgi.application'
+WSGI_APPLICATION = 'fsdw.wsgi.application'
 
 
 # Database
@@ -103,7 +103,7 @@ COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'sass --scss {infile} {outfile}'),
 )
 
-APPLI_ROOT_PATH = "/home/mahulst/projects/fullstack (copy)/fswd/"
+APPLI_ROOT_PATH = "/home/mahulst/projects/fullstack (copy)/fsdw/"
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),

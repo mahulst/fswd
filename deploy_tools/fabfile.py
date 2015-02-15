@@ -4,7 +4,7 @@ from fabric.api import env, local, run
 import random
 
 
-REPO_URL = 'https://github.com/mahulst/fswd'
+REPO_URL = 'git@gitlab.mvdhulst.nl:mahulst/fsdw.git'
 
 def deploy():
     site_folder = '/home/%s/sites/%s' % (env.user, env.host)

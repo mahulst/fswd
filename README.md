@@ -2,6 +2,9 @@
 
 ## Installation
 
+#creating nginx conf file
+#sed "s/SITENAME/www.live.fsdw.com/g" deploy_tools/nginx.template.conf | sudo tee /etc/nginx/sites-available/www.live.fsdw.com
+
 *NOTE: Requires [virtualenv](http://virtualenv.readthedocs.org/en/latest/),
 [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/) and
 [Node.js](http://nodejs.org/).*

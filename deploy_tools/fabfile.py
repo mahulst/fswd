@@ -13,6 +13,8 @@ def deploy():
     _get_latest_source(source_folder)
     _update_settings(source_folder, env.host)
     _update_virtualenv(source_folder)
+    _run_gulp_build(source_folder)
+    _symlink_templates_to_dist(source_folder)
     _update_static_files(source_folder)
     _update_database(source_folder)
 
@@ -48,6 +50,24 @@ def _update_virtualenv(source_folder):
             virtualenv_folder, source_folder
     ))
 
+def _run_gulp_build(source_folder):
+    static_folder = '%s/static' % source_folder
+    run('source /home/fsdw/.nvm/nvm.sh && \
+    nvm use default && \
+    cd %s && \
+    npm install && \
+    bower install &&\
+    gulp build' % static_folder)
+
+def _symlink_templates_to_dist(source_folder):
+    _link_template(source_folder, 'index.html')
+
+def _link_template(source_folder, template_name):
+    template_folder = '%s/templates' % source_folder
+    template_symlink = '../../static/dist/%s' % template_name
+    run('cd %s && \
+    rm %s && \
+    ln -s %s' % (template_folder, template_name, template_symlink))
 
 def _update_static_files(source_folder):
     run('cd %s && ../virtualenv/bin/python3 manage.py collectstatic --noinput' % (
